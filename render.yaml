@@ -3,8 +3,10 @@ services:
     name: n8n-automacao
     env: docker
     plan: starter
-    image: n8nio/n8n  # Adicione esta linha!
+    image: n8nio/n8n
     healthCheckPath: /healthz
+    # Adicione este comando de inicialização explícito:
+    startCommand: n8n start 
     envVars:
       - key: N8N_DEFAULT_BINARY_DATA_MODE
         value: filesystem

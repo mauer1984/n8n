@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: n8n-automacao
+    env: docker
+    plan: starter  # O plano 'starter' tem mais RAM e estabilidade
+    healthCheckPath: /healthz
+    envVars:
+      - key: N8N_DEFAULT_BINARY_DATA_MODE
+        value: filesystem
+      - key: EXECUTIONS_PROCESS
+        value: main
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
